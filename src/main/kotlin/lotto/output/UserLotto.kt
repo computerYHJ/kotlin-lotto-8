@@ -49,5 +49,4 @@ class UserLotto {
 
     fun getWinner(): List<Int> = winnerNumber
     fun getBonus(): Int = bonusNumber
-
 }

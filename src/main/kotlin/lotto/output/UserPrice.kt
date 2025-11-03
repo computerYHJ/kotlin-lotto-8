@@ -10,14 +10,17 @@ class UserPrice {
     init {
         repeatPriceRun()
     }
+
     private fun repeatPriceRun(){
         while (price == 0) { getCorrectPrice() }
     }
+
     private fun getCorrectPrice(){
         try{
             // price = InputPriceValidator(UserInputPrice().getInput()).getUserPrice()
             price = InputValidator.validatorPrice(UserInput.userInputPrice())
         } catch (e: IllegalArgumentException) { println(e.message) }
     }
+
     fun getPrice() = price
 }

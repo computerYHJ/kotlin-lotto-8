@@ -10,7 +10,6 @@ import lotto.output.UserPrice
 fun main() {
     var price = UserInfo.getPrice()
     var buyLotto = BuyLottoPaper(price)
-    //var userLottoInfo = UserLotto()
 
     var winCount: Array<Int> = CalculatorWinCount(
         buyLotto.getLottoCount(), buyLotto.getLottoPaper(),

@@ -9,8 +9,8 @@ object UserInfo {
     private var winnerNumber: List<Int> = emptyList()
     private var bonusNumber: Int = -1
 
-    fun getPrice(): Int{
-        while(price == -1) correctPrice()
+    fun getPrice(): Int {
+        while (price == -1) correctPrice()
         return price
     }
 
@@ -22,21 +22,21 @@ object UserInfo {
         }
     }
 
-    fun getWinNum(): List<Int>{
-        while(winnerNumber.isEmpty()) correctWinNum()
+    fun getWinNum(): List<Int> {
+        while (winnerNumber.isEmpty()) correctWinNum()
         return winnerNumber
     }
 
-    fun correctWinNum(){
-        try{
+    fun correctWinNum() {
+        try {
             winnerNumber = InputValidator.validatorLotto(UserInput.userInputLotto())
-        } catch (e: IllegalArgumentException){
+        } catch (e: IllegalArgumentException) {
             println(e.message)
         }
     }
 
-    fun getBonus(): Int{
-        while(bonusNumber == -1) correctBonus()
+    fun getBonus(): Int {
+        while (bonusNumber == -1) correctBonus()
         return bonusNumber
     }
 

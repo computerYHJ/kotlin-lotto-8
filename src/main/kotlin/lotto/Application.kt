@@ -4,8 +4,6 @@ import lotto.output.BuyLottoPaper
 import lotto.output.CalculatorWinCount
 import lotto.output.PrintResult
 import lotto.output.UserInfo
-import lotto.output.UserLotto
-import lotto.output.UserPrice
 
 fun main() {
     var price = UserInfo.getPrice()

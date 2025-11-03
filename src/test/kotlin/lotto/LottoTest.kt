@@ -29,37 +29,37 @@ class LottoTest {
 
     // TODO: 추가 기능 구현에 따른 테스트 코드 작성
     @Test
-    fun `입력한 금액이 없다면 예외가 발생한다`() {
+    fun `입력한 값이 없다면 예외가 발생한다`() {
         assertThrows<IllegalArgumentException> {
-            InputValidator.validatorPrice("")
+            InputValidator.validatorNoNum("")
         }
     }
 
     @Test
-    fun `입력한 금액이 공백이라면 예외가 발생한다`() {
+    fun `입력한 값이 공백이라면 예외가 발생한다`() {
         assertThrows<IllegalArgumentException> {
-            InputValidator.validatorPrice(" ")
+            InputValidator.validatorNoNum(" ")
         }
     }
 
     @Test
-    fun `입력한 금액이 숫자가 아니라면 예외가 발생한다`() {
+    fun `입력한 값이 숫자가 아니라면 예외가 발생한다`() {
         assertThrows<IllegalArgumentException> {
-            InputValidator.validatorPrice("abc")
+            InputValidator.validatorNoNum("abc")
         }
     }
 
     @Test
     fun `입력한 금액이 1000원 미만이면 예외가 발생한다`(){
         assertThrows<IllegalArgumentException> {
-            InputValidator.validatorPrice("999")
+            InputValidator.validatorPriceRange(999)
         }
     }
 
     @Test
     fun `입력한 금액이 1000원 단위가 아니라면 예외가 발생한다`(){
         assertThrows<IllegalArgumentException> {
-            InputValidator.validatorPrice("1100")
+            InputValidator.validatorPriceRange(1100)
         }
     }
 
@@ -98,27 +98,9 @@ class LottoTest {
     }
 
     @Test
-    fun `입력한 당첨번호가 숫자가 아니면 예외가 발생한다`(){
-        assertThrows<IllegalArgumentException> {
-            InputValidator.validatorLotto("abc")
-        }
-    }
-    @Test
-    fun `입력한 당첨번호가 공백이면 예외가 발생한다`(){
-        assertThrows<IllegalArgumentException> {
-            InputValidator.validatorLotto(" ")
-        }
-    }
-    @Test
-    fun `당첨번호가 입력되지 않는다면 예외가 발생한다`(){
-        assertThrows<IllegalArgumentException> {
-            InputValidator.validatorLotto("")
-        }
-    }
-    @Test
     fun `입력한 당첨번호중 숫자가 아니면 예외가 발생한다`(){
         assertThrows<IllegalArgumentException> {
-            InputValidator.validatorLotto("1, 2, 3, abc, 5, 6")
+            InputValidator.validatorNoNum("1, 2, 3, abc, 5, 6")
         }
     }
     @Test
@@ -127,24 +109,7 @@ class LottoTest {
             InputValidator.validatorLotto("1, 2, 3, 46, 5, 6")
         }
     }
-    @Test
-    fun `입력한 행운번호가 숫자가 아니면 예외가 발생한다`(){
-        assertThrows<IllegalArgumentException> {
-            InputValidator.validatorBonus("abc", listOf(1,2,3,4,5,6))
-        }
-    }
-    @Test
-    fun `입력한 행운번호가 공백이면 예외가 발생한다`(){
-        assertThrows<IllegalArgumentException> {
-            InputValidator.validatorBonus(" ", listOf(1,2,3,4,5,6))
-        }
-    }
-    @Test
-    fun `행운번호가 입력되지 않는다면 예외가 발생한다`(){
-        assertThrows<IllegalArgumentException> {
-            InputValidator.validatorBonus("", listOf(1,2,3,4,5,6))
-        }
-    }
+
     @Test
     fun `행운번호가 로또번호 범위를 벗어난다면 예외가 발생한다`(){
         assertThrows<IllegalArgumentException> {

@@ -1,5 +1,6 @@
 package lotto
 
+import lotto.input.UserInputPrice
 import lotto.output.BuyLottoPaper
 import lotto.validator.BonusValidator
 import lotto.validator.InputPriceValidator
